@@ -1,0 +1,30 @@
+{
+    "name": "m6web/statsd-request-headers-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony Bundle which stores request headers in statsd",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gaël Millet",
+            "email": "millet.gael@gmail.com"
+        }
+    ],
+    "config": {
+        "bin-dir": "bin",
+        "vendor-dir": "vendor"
+    },
+    "require": {
+        "php": "~5.5|~7.0",
+        "m6web/statsd-bundle": "@stable"
+    },
+    "require-dev": {
+        "atoum/atoum-bundle": "@stable",
+        "atoum/visibility-extension": "^1.0",
+        "m6web/coke": "~2.1",
+        "m6web/symfony2-coding-standard": "~3.3.0",
+        "symfony/symfony": "~2.7|~3.0"
+    },
+    "autoload": {
+        "psr-4": { "M6Web\\Bundle\\StatsdRequestHeadersBundle\\": "" }
+    }
+}
