@@ -11,16 +11,6 @@ m6_web_statsd_request_headers:
     headers: ['X-my-header', 'X-my-other-header']
     routes: ['my-route']
     event: 'my.statsd.event'
- 
-m6_statsd:
-    [...]
-    clients:
-        default:
-            [...]
-            events:    
-                my.statsd.event:
-                    increment: my.statsd.event.<value>
-
 ```
 You can select every route or every header by setting :
 `headers: ['*']`
