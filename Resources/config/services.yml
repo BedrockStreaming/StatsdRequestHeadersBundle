@@ -2,9 +2,9 @@ services:
    m6web.m6_web_statsd_request_headers.listener:
         class: M6Web\Bundle\StatsdRequestHeadersBundle\EventListener\StatsdRequestHeadersListener
         arguments:
-            - @m6_statsd
-            - %m6_web_statsd_request_headers.event%
-            - %m6_web_statsd_request_headers.headers%
-            - %m6_web_statsd_request_headers.routes%
+            - '@m6_statsd'
+            - '%m6_web_statsd_request_headers.event%'
+            - '%m6_web_statsd_request_headers.headers%'
+            - '%m6_web_statsd_request_headers.routes%'
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
