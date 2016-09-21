@@ -12,23 +12,4 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  */
 class M6WebStatsdRequestHeadersBundle extends Bundle
 {
-    /**
-     * Build bundle
-     *
-     * @param ContainerBuilder $container
-     */
-    public function build(ContainerBuilder $container)
-    {
-        parent::build($container);
-    }
-
-    /**
-     * Enable overriding conf key for this bundle
-     *
-     * @return M6WebStatsdRequestHeadersBundle
-     */
-    public function getContainerExtension()
-    {
-        return new M6WebStatsdRequestHeadersBundle();
-    }
 }
