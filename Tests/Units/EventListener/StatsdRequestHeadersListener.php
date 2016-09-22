@@ -66,8 +66,8 @@ class StatsdRequestHeadersListener extends Units\Test
                     'route' => 'route1',
                 ],
                 'statsdCalls' => [
-                    ['foo.head1'],
-                    ['foo.head2'],
+                    ['foo.route.route1.header.head1'],
+                    ['foo.route.route1.header.head2'],
                 ]
             ],
             // Wrong route

@@ -73,22 +73,23 @@ class StatsdRequestHeadersListener
             return;
         }
 
-        array_walk($headers, [$this, 'manageHeader']);
+        array_walk($headers, [$this, 'manageHeader'], $route);
     }
 
     /**
      * Check submitted header & increment statsd if accepted
      *
-     * @param $headerValue
-     * @param $headerName
+     * @param string $headerValue
+     * @param string $headerName
+     * @param string $route
      */
-    protected function manageHeader($headerValue, $headerName)
+    protected function manageHeader($headerValue, $headerName, $route)
     {
         if (!$this->isHeaderAccepted($headerName)) {
             return;
         }
 
-        $this->statsd->increment(sprintf('%s.%s', $this->eventName, $headerName));
+        $this->statsd->increment(sprintf('%s.route.%s.header.%s', $this->eventName, $route, $headerName));
     }
 
     /**
