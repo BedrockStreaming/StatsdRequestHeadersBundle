@@ -23,7 +23,7 @@ class M6WebStatsdRequestHeadersExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
         $container->setParameter('m6_web_statsd_request_headers.headers', $config['headers']);
         $container->setParameter('m6_web_statsd_request_headers.routes', $config['routes']);
-        $container->setParameter('m6_web_statsd_request_headers.event', preg_replace('/[^\w\-]/', '', $config['event']));
+        $container->setParameter('m6_web_statsd_request_headers.event', preg_replace('/[^\w\-\.]/', '', $config['event']));
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
